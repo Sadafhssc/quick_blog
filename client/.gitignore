@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Environment variables (NEVER commit these — API keys, DB URIs, etc.)
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor/OS files
+.DS_Store
+.vscode/
+.idea/
+
+# Vite cache
+.vite/

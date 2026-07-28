@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+    font-family: "Outfit", sans-serif;
+}
+::-webkit-scrollbar{
+  display:none;
+}
+:root {
+  --primary-color: #5044E5;
+}
+
+.logo-bg {
+  color: var(--primary-color);
+}
+/* Blog Content */
+.blog-content {
+  text-align: justify;
+}
+
+/* Main Blog Title */
+.blog-content h2 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #000;
+  margin-bottom: 2.5rem;
+}
+
+/* Section Heading */
+.blog-content strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  margin-top: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph */
+.blog-content p {
+  font-size: 1.3rem;
+  line-height: 2;
+  color: #374151;
+  text-align: justify;
+  margin-bottom: 1.8rem;
+}
