@@ -1,0 +1,66 @@
+[33mcommit 406068848924f95f709248adfc5d363062a985ad[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Sadaf Javed <sadafhssc234a@gmail.com>
+Date:   Tue Jul 28 20:18:59 2026 +0500
+
+    Completed QuickBlog
+
+ .gitignore                               |    1 [32m+[m
+ client/.gitignore                        |   23 [32m+[m
+ client/README.md                         |   16 [32m+[m
+ client/eslint.config.js                  |   21 [32m+[m
+ client/index.html                        |   15 [32m+[m
+ client/package-lock.json                 | 2938 [32m++++++++++++++++++++++++++++++[m
+ client/package.json                      |   33 [32m+[m
+ client/public/favicon.svg                |    4 [32m+[m
+ client/public/icons.svg                  |   24 [32m+[m
+ client/src/App.css                       |  184 [32m++[m
+ client/src/App.jsx                       |   42 [32m+[m
+ client/src/assets/add_icon.svg           |    4 [32m+[m
+ client/src/assets/arrow.svg              |    4 [32m+[m
+ client/src/assets/assets.js              |  259 [32m+++[m
+ client/src/assets/bin_icon.svg           |    1 [32m+[m
+ client/src/assets/blog_icon.png          |  Bin [31m0[m -> [32m488[m bytes
+ client/src/assets/blog_pic_1.png         |  Bin [31m0[m -> [32m400674[m bytes
+ client/src/assets/blog_pic_10.png        |  Bin [31m0[m -> [32m345651[m bytes
+ client/src/assets/blog_pic_2.png         |  Bin [31m0[m -> [32m350284[m bytes
+ client/src/assets/blog_pic_3.png         |  Bin [31m0[m -> [32m422614[m bytes
+ client/src/assets/blog_pic_4.png         |  Bin [31m0[m -> [32m357320[m bytes
+ client/src/assets/blog_pic_5.png         |  Bin [31m0[m -> [32m536377[m bytes
+ client/src/assets/blog_pic_6.png         |  Bin [31m0[m -> [32m387990[m bytes
+ client/src/assets/blog_pic_7.png         |  Bin [31m0[m -> [32m308043[m bytes
+ client/src/assets/blog_pic_8.png         |  Bin [31m0[m -> [32m373962[m bytes
+ client/src/assets/blog_pic_9.png         |  Bin [31m0[m -> [32m336825[m bytes
+ client/src/assets/comment_icon.svg       |    1 [32m+[m
+ client/src/assets/cross_icon.svg         |    5 [32m+[m
+ client/src/assets/dashboard_icon_1.svg   |    6 [32m+[m
+ client/src/assets/dashboard_icon_2.svg   |    4 [32m+[m
+ client/src/assets/dashboard_icon_3.svg   |    4 [32m+[m
+ client/src/assets/dashboard_icon_4.svg   |    5 [32m+[m
+ client/src/assets/email_icon.png         |  Bin [31m0[m -> [32m502[m bytes
+ client/src/assets/facebook_icon.svg      |   17 [32m+[m
+ client/src/assets/favicon.svg            |    4 [32m+[m
+ client/src/assets/googleplus_icon.svg    |   17 [32m+[m
+ client/src/assets/gradientBackground.png |  Bin [31m0[m -> [32m894202[m bytes
+ client/src/assets/hero.png               |  Bin [31m0[m -> [32m13057[m bytes
+ client/src/assets/home_icon.svg          |    4 [32m+[m
+ client/src/assets/list_icon.svg          |    5 [32m+[m
+ client/src/assets/logo.svg               |    5 [32m+[m
+ client/src/assets/logo_light.svg         |    5 [32m+[m
+ client/src/assets/react.svg              |    1 [32m+[m
+ client/src/assets/rich-text-css.txt      |   25 [32m+[m
+ client/src/assets/star_icon.svg          |    4 [32m+[m
+ client/src/assets/tick_icon.svg          |    1 [32m+[m
+ client/src/assets/twitter_icon.svg       |   17 [32m+[m
+ client/src/assets/upload_area.svg        |    6 [32m+[m
+ client/src/assets/user_icon.svg          |    1 [32m+[m
+ client/src/assets/vite.svg               |    1 [32m+[m
+ client/src/components/AddBlogForm.jsx    |  310 [32m++++[m
+ client/src/components/AddCommentList.jsx |  173 [32m++[m
+ client/src/components/AdminHeader.jsx    |   39 [32m+[m
+ client/src/components/BlogCard.jsx       |   78 [32m+[m
+ client/src/components/BlogDetail.jsx     |  113 [32m++[m
+ client/src/components/BlogList.jsx       |   41 [32m+[m
+ client/src/components/Comment.jsx        |  146 [32m++[m
+ client/src/components/DashboardAdmin.jsx |  185 [32m++[m
+ client/src/components/DashboardIcons.jsx |  193 [32m++[m
+ client/src/componen
