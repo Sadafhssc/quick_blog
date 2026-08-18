@@ -63,4 +63,39 @@ Date:   Tue Jul 28 20:18:59 2026 +0500
  client/src/components/Comment.jsx        |  146 [32m++[m
  client/src/components/DashboardAdmin.jsx |  185 [32m++[m
  client/src/components/DashboardIcons.jsx |  193 [32m++[m
- client/src/componen
+ client/src/components/Footer.jsx         |  126 [32m++[m
+ client/src/components/Header.jsx         |  131 [32m++[m
+ client/src/components/LoginForm.jsx      |  143 [32m++[m
+ client/src/components/Navbar.jsx         |   39 [32m+[m
+ client/src/components/SidePanel.jsx      |   82 [32m+[m
+ client/src/components/SocialMedia.jsx    |   44 [32m+[m
+ client/src/components/Subscribe.jsx      |   49 [32m+[m
+ client/src/context/AppContext.jsx        |   67 [32m+[m
+ client/src/index.css                     |   47 [32m+[m
+ client/src/main.jsx                      |   13 [32m+[m
+ client/src/pages/Blog.jsx                |   20 [32m+[m
+ client/src/pages/Home.jsx                |   20 [32m+[m
+ client/src/pages/Layout.jsx              |   22 [32m+[m
+ client/src/pages/admin/AddBlogs.jsx      |   19 [32m+[m
+ client/src/pages/admin/Dashboard.jsx     |   16 [32m+[m
+ client/src/pages/admin/ListBlogs.jsx     |   30 [32m+[m
+ client/src/pages/admin/ListComments.jsx  |   14 [32m+[m
+ client/src/pages/admin/Login.jsx         |   12 [32m+[m
+ client/vercel.json                       |    8 [32m+[m
+ client/vite.config.js                    |    7 [32m+[m
+ server/config/db.js                      |   15 [32m+[m
+ server/config/gemini.js                  |   13 [32m+[m
+ server/config/imageKit.js                |    9 [32m+[m
+ server/controllers/adminController.js    |   75 [32m+[m
+ server/controllers/blogController.js     |  102 [32m++[m
+ server/middlewares/auth.js               |   11 [32m+[m
+ server/middlewares/multer.js             |    3 [32m+[m
+ server/models/blogModel.js               |   30 [32m+[m
+ server/models/commentModel.js            |   22 [32m+[m
+ server/package-lock.json                 | 2355 [32m++++++++++++++++++++++++[m
+ server/package.json                      |   28 [32m+[m
+ server/routes/adminRoutes.js             |   11 [32m+[m
+ server/routes/blogRoutes.js              |   15 [32m+[m
+ server/server.js                         |   21 [32m+[m
+ server/vercel.json                       |   20 [32m+[m
+ 94 files changed, 8624 insertions(+)
