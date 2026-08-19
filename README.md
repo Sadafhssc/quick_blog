@@ -1,162 +1,473 @@
-QUICKBLOG
-=========================================================
+# QuickBlog
 
-QuickBlog is a full-stack blogging platform with a public-facing
-blog and a dedicated admin dashboard for content management. It
-supports AI-assisted blog writing, image uploads, and comment
-moderation, and is built on the MERN stack.
+A full-stack blogging platform built with the MERN stack, featuring a public-facing blog, admin dashboard, AI-assisted content generation, image management, and comment moderation.
 
+QuickBlog is designed to provide a complete content-management experience where administrators can create, edit, publish, unpublish, and manage blog posts while visitors can browse articles and interact through comments.
 
-FEATURES
----------------------------------------------------------
+## Live Demo
 
-- Public blog with a home feed, category browsing, and individual
-  blog detail pages
-- Rich text editing for blog content using Quill
-- AI-assisted content generation for blog posts using the Google
-  Gemini API
-- Image upload and hosting via ImageKit
-- Comment system with admin approval workflow (comments require
-  approval before appearing publicly)
-- Admin authentication with JWT-based login
-- Admin dashboard for managing blogs, comments, and viewing site
-  statistics
-- Ability to publish, unpublish, or delete blog posts
+A live project demonstration is available on LinkedIn:
 
+**LinkedIn Demo:**
+https://www.linkedin.com/feed/update/urn:li:activity:7486760408440029186/
 
-TECH STACK
----------------------------------------------------------
+## Repository
 
-Frontend
-    React 19
-    React Router
-    Axios
-    Quill (rich text editor)
-    React Hot Toast (notifications)
-    Vite (build tool)
+**GitHub:**
+https://github.com/Sadafhssc/quick_blog
 
-Backend
-    Node.js
-    Express 5
-    MongoDB with Mongoose
-    JSON Web Tokens (JWT) for authentication
-    Multer (file upload handling)
-    ImageKit (image storage and delivery)
-    Google Gemini API (AI content generation)
+---
 
+## Features
 
-PROJECT STRUCTURE
----------------------------------------------------------
+### Public Blog
 
+* Responsive public-facing blog
+* Home page with published blog posts
+* Browse posts by category
+* Individual blog detail pages
+* Blog metadata and formatted content
+* Public commenting system
+* Comments are displayed only after admin approval
+
+### Admin Dashboard
+
+* Secure JWT-based admin authentication
+* Dashboard with website statistics
+* View and manage all blog posts
+* Create new blog posts
+* Publish and unpublish posts
+* Delete blog posts
+* View submitted comments
+* Approve pending comments
+* Delete comments
+
+### Rich Text Content
+
+QuickBlog uses Quill as the rich text editor, allowing administrators to create properly formatted blog content with a user-friendly editing experience.
+
+### AI-Assisted Blog Generation
+
+The platform integrates the Google Gemini API to assist administrators in generating blog content, making the content creation workflow faster and more efficient.
+
+### Image Management
+
+Images can be uploaded through the backend and hosted using ImageKit, providing optimized image storage and delivery for blog content.
+
+### Comment Moderation
+
+Comments submitted by visitors go through an approval workflow before becoming publicly visible. Administrators can review, approve, or delete comments from the dashboard.
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* React 19
+* React Router
+* Axios
+* Quill
+* React Hot Toast
+* Vite
+
+### Backend
+
+* Node.js
+* Express 5
+* MongoDB
+* Mongoose
+* JSON Web Token (JWT)
+* Multer
+* ImageKit
+* Google Gemini API
+
+---
+
+## Architecture
+
+QuickBlog follows a client-server architecture built around the MERN stack.
+
+```text
 quick_blog/
-  client/               React frontend (Vite)
-    src/
-      components/       Reusable UI components (Navbar, BlogCard,
-                         Comment, AdminHeader, etc.)
-      pages/             Route-level pages (Home, Blog, Layout,
-                         admin pages)
-      context/           Application context/state
+│
+├── client/                         # React frontend
+│   ├── src/
+│   │   ├── components/             # Reusable UI components
+│   │   ├── pages/                  # Application pages and routes
+│   │   └── context/                # Application state/context
+│   └── ...
+│
+├── server/                         # Express backend
+│   ├── config/                     # Database and service configuration
+│   ├── controllers/                # Request handlers
+│   ├── middlewares/                # Authentication and upload middleware
+│   ├── models/                     # Mongoose models
+│   ├── routes/                     # API routes
+│   └── server.js                   # Backend entry point
+│
+└── README.md
+```
 
-  server/               Express backend
-    config/             Database connection setup
-    controllers/        Request handlers for admin and blog routes
-    middlewares/         Auth and file upload middleware
-    models/              Mongoose schemas (Blog, Comment)
-    routes/              API route definitions
-    server.js            Application entry point
+---
 
+## API Overview
 
-API OVERVIEW
----------------------------------------------------------
+### Blog API
 
-Blog Routes (/api/blog)
-    GET  /all              List all published blogs
-    GET  /:id               Get a single blog by ID
-    POST /addBlog           Create a new blog (admin only, supports
-                             image upload)
-    POST /delete             Delete a blog (admin only)
-    POST /toggle-publish      Publish or unpublish a blog (admin only)
-    POST /addComment          Add a comment to a blog
-    POST /comments            Fetch comments for a blog
-    POST /generate             Generate blog content using AI
+Base route:
 
-Admin Routes (/api/admin)
-    POST /login               Admin login
-    GET  /blogs                Get all blogs (admin view)
-    GET  /comments              Get all comments
-    GET  /dashboard              Get dashboard statistics
-    POST /approve-comment          Approve a pending comment
-    POST /delete-comment            Delete a comment
+```text
+/api/blog
+```
 
+| Method | Endpoint          | Description                  | Authentication |
+| ------ | ----------------- | ---------------------------- | -------------- |
+| GET    | `/all`            | Get all published blogs      | Public         |
+| GET    | `/:id`            | Get a single blog            | Public         |
+| POST   | `/addBlog`        | Create a blog post           | Admin          |
+| POST   | `/delete`         | Delete a blog post           | Admin          |
+| POST   | `/toggle-publish` | Publish/unpublish a blog     | Admin          |
+| POST   | `/addComment`     | Submit a comment             | Public         |
+| POST   | `/comments`       | Get comments for a blog      | Public         |
+| POST   | `/generate`       | Generate AI-assisted content | Admin          |
 
-GETTING STARTED
----------------------------------------------------------
+### Admin API
 
-Prerequisites
-    - Node.js installed
-    - A MongoDB instance (local or cloud, e.g. MongoDB Atlas)
-    - An ImageKit account (for image uploads)
-    - A Google Gemini API key (for AI content generation)
+Base route:
 
-Installation
+```text
+/api/admin
+```
 
-    Clone the repository:
+| Method | Endpoint           | Description                | Authentication |
+| ------ | ------------------ | -------------------------- | -------------- |
+| POST   | `/login`           | Authenticate administrator | Public         |
+| GET    | `/blogs`           | Get all blogs              | Admin          |
+| GET    | `/comments`        | Get all comments           | Admin          |
+| GET    | `/dashboard`       | Get dashboard statistics   | Admin          |
+| POST   | `/approve-comment` | Approve a pending comment  | Admin          |
+| POST   | `/delete-comment`  | Delete a comment           | Admin          |
 
-        git clone https://github.com/Sadafhssc/quick_blog.git
-        cd quick_blog
+---
 
-    Install server dependencies:
+## Environment Variables
 
-        cd server
-        npm install
+Create a `.env` file inside the `server` directory.
 
-    Install client dependencies:
+```env
+PORT=3000
 
-        cd ../client
-        npm install
+JWT_SECRET=your_jwt_secret
 
+ADMIN_EMAIL=your_admin_email
+ADMIN_PASSWORD=your_admin_password
 
-ENVIRONMENT VARIABLES
----------------------------------------------------------
+MONGODB_URI=your_mongodb_connection_string
 
-Create a .env file inside the server directory with the following
-variables:
+IMAGEKIT_URL_ENDPOINT=your_imagekit_url_endpoint
+IMAGEKIT_PRIVATE_KEY=your_imagekit_private_key
+IMAGEKIT_PUBLIC_KEY=your_imagekit_public_key
 
-    PORT=3000
-    JWT_SECRET=your_jwt_secret
-    ADMIN_EMAIL=your_admin_email
-    ADMIN_PASSWORD=your_admin_password
-    MONGODB_URI=your_mongodb_connection_string
-    IMAGEKIT_URL_ENDPOINT=your_imagekit_url_endpoint
-    IMAGEKIT_PRIVATE_KEY=your_imagekit_private_key
-    IMAGEKIT_PUBLIC_KEY=your_imagekit_public_key
-    GEMINI_API_KEY=your_gemini_api_key
+GEMINI_API_KEY=your_gemini_api_key
+```
 
-This file is excluded from version control via .gitignore and
-should never be committed.
+### Environment Variable Description
 
+| Variable                | Purpose                            |
+| ----------------------- | ---------------------------------- |
+| `PORT`                  | Port used by the Express server    |
+| `JWT_SECRET`            | Secret used for JWT authentication |
+| `ADMIN_EMAIL`           | Administrator login email          |
+| `ADMIN_PASSWORD`        | Administrator login password       |
+| `MONGODB_URI`           | MongoDB database connection string |
+| `IMAGEKIT_URL_ENDPOINT` | ImageKit delivery endpoint         |
+| `IMAGEKIT_PRIVATE_KEY`  | ImageKit private API key           |
+| `IMAGEKIT_PUBLIC_KEY`   | ImageKit public API key            |
+| `GEMINI_API_KEY`        | Google Gemini API key              |
 
-RUNNING THE APPLICATION
----------------------------------------------------------
+Never commit your `.env` file or expose API keys, database credentials, JWT secrets, or administrator credentials.
 
-Start the backend server:
+---
 
-    cd server
-    npm run server
+## Getting Started
 
-Start the frontend development server:
+### Prerequisites
 
-    cd client
-    npm run dev
+Before running the project, make sure you have:
 
-The client will be available at the local Vite development URL
-(typically http://localhost:5173), and the API will run on the
-port specified in .env (default 3000).
+* Node.js installed
+* npm installed
+* MongoDB or a MongoDB Atlas database
+* ImageKit account
+* Google Gemini API key
 
+### 1. Clone the Repository
 
+```bash
+git clone https://github.com/Sadafhssc/quick_blog.git
+cd quick_blog
+```
 
-AUTHOR
----------------------------------------------------------
+### 2. Install Backend Dependencies
 
-Sadaf Javed
+```bash
+cd server
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create:
+
+```text
+server/.env
+```
+
+and add the required environment variables.
+
+### 4. Install Frontend Dependencies
+
+```bash
+cd ../client
+npm install
+```
+
+### 5. Start the Backend
+
+From the `server` directory:
+
+```bash
+npm run server
+```
+
+The backend will run on the configured port, which defaults to:
+
+```text
+http://localhost:3000
+```
+
+### 6. Start the Frontend
+
+From the `client` directory:
+
+```bash
+npm run dev
+```
+
+Vite will provide the frontend development URL, typically:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Authentication
+
+QuickBlog uses JSON Web Tokens for administrator authentication.
+
+The admin login endpoint validates the configured administrator credentials and provides authentication for protected dashboard operations.
+
+Protected functionality includes:
+
+* Creating blog posts
+* Deleting blog posts
+* Publishing and unpublishing posts
+* Managing comments
+* Accessing dashboard statistics
+* Generating AI-assisted blog content
+
+---
+
+## Content Management Workflow
+
+The typical blog publishing workflow is:
+
+```text
+Admin Login
+     |
+     v
+Admin Dashboard
+     |
+     v
+Create Blog Post
+     |
+     +----> Upload Image
+     |
+     +----> Write/Edit Content
+     |
+     +----> Generate Content with Gemini
+     |
+     v
+Publish Blog
+     |
+     v
+Public Blog
+     |
+     v
+Visitor Comments
+     |
+     v
+Admin Review
+     |
+     +----> Approve
+     |
+     +----> Delete
+     |
+     v
+Approved Comment Visible Publicly
+```
+
+---
+
+## AI Content Generation
+
+QuickBlog integrates the Google Gemini API to provide AI-assisted blog content generation.
+
+The feature is intended to assist administrators during the writing process by generating content that can subsequently be reviewed and edited through the rich text editor before publication.
+
+This keeps the administrator in control of the final published content.
+
+---
+
+## Image Uploads
+
+Blog images are handled through the backend using Multer for file processing and ImageKit for image hosting and delivery.
+
+The general workflow is:
+
+```text
+Admin
+  |
+  v
+Image Upload
+  |
+  v
+Multer
+  |
+  v
+ImageKit
+  |
+  v
+Hosted Image URL
+  |
+  v
+Blog Post
+```
+
+---
+
+## Comment Moderation
+
+QuickBlog uses an approval-based comment system.
+
+When a visitor submits a comment:
+
+1. The comment is stored in the database.
+2. The comment remains pending.
+3. An administrator reviews it through the dashboard.
+4. The administrator can approve or delete it.
+5. Approved comments become visible on the public blog.
+
+This provides administrators with control over publicly displayed user-generated content.
+
+---
+
+## Database Models
+
+The backend uses MongoDB with Mongoose for data persistence.
+
+Core models include:
+
+### Blog
+
+Stores information such as:
+
+* Blog title
+* Blog content
+* Blog image
+* Category
+* Publication status
+* Creation date
+* Other blog metadata
+
+### Comment
+
+Stores information related to:
+
+* Comment author
+* Comment content
+* Associated blog
+* Approval status
+* Creation date
+
+---
+
+## Project Goals
+
+QuickBlog was developed to demonstrate the implementation of a modern full-stack content management platform using the MERN stack.
+
+The project brings together several practical concepts, including:
+
+* RESTful API development
+* React application architecture
+* MongoDB database management
+* JWT authentication
+* File uploads
+* Cloud image hosting
+* Rich text editing
+* AI API integration
+* Content moderation
+* Admin dashboard development
+* Client-server communication
+
+---
+
+## Future Improvements
+
+Potential future enhancements include:
+
+* Role-based admin permissions
+* Blog editing functionality
+* Search functionality
+* Pagination and infinite scrolling
+* SEO metadata management
+* Scheduled publishing
+* Advanced analytics
+* Markdown support
+* Social sharing
+* Email notifications
+* Improved AI writing tools
+* Automated image optimization
+* Deployment with production CI/CD
+
+---
+
+## Security Considerations
+
+For production deployments:
+
+* Store all secrets in environment variables.
+* Never commit `.env` files.
+* Use strong JWT secrets.
+* Use secure administrator credentials.
+* Configure CORS appropriately.
+* Validate and sanitize user-generated content.
+* Validate uploaded files and restrict unsupported file types.
+* Apply rate limiting to authentication and public APIs.
+* Use HTTPS in production.
+* Keep dependencies updated.
+
+---
+
+## Author
+
+**Sadaf Javed**
+
+GitHub: https://github.com/Sadafhssc
+
 LinkedIn: https://linkedin.com/in/sadaf-javed
+
+Project Repository: https://github.com/Sadafhssc/quick_blog
+
