@@ -7,11 +7,12 @@ const SidePanel = () => {
     <div
       className="bg-white border-end"
       style={{
-        width: "260px",
-        minHeight: "100vh",
+        minHeight: "auto",
       }}
     >
-      <ul className="nav flex-column pt-4">
+      <ul
+        className="nav flex-row flex-md-column justify-content-around justify-content-md-start pt-2 pt-md-4 border-bottom border-bottom-md-0"
+      >
 
         {/* Dashboard */}
         <li className="nav-item">
@@ -19,13 +20,13 @@ const SidePanel = () => {
             to="/admin"
             end
             className={({ isActive }) =>
-              `nav-link d-flex align-items-center gap-3 py-3 px-4 ${
-                isActive ? "bg-light border-end border-4 border-primary fw-semibold" : "text-dark"
+              `nav-link d-flex flex-column flex-md-row align-items-center gap-md-3 py-2 py-md-3 px-2 px-md-4 ${
+                isActive ? "bg-light border-bottom border-md-bottom-0 border-end-md border-4 border-primary fw-semibold" : "text-dark"
               }`
             }
           >
             <img src={assets.list_icon} alt="" width={22} height={22} />
-            <span>Dashboard</span>
+            <span className="d-none d-md-inline">Dashboard</span>
           </NavLink>
         </li>
 
@@ -34,13 +35,13 @@ const SidePanel = () => {
           <NavLink
             to="/admin/addBlogs"
             className={({ isActive }) =>
-              `nav-link d-flex align-items-center gap-3 py-3 px-4 ${
-                isActive ? "bg-light border-end border-4 border-primary fw-semibold" : "text-dark"
+              `nav-link d-flex flex-column flex-md-row align-items-center gap-md-3 py-2 py-md-3 px-2 px-md-4 ${
+                isActive ? "bg-light border-bottom border-md-bottom-0 border-end-md border-4 border-primary fw-semibold" : "text-dark"
               }`
             }
           >
             <img src={assets.add_icon} alt="" width={22} height={22} />
-            <span>Add Blogs</span>
+            <span className="d-none d-md-inline">Add Blogs</span>
           </NavLink>
         </li>
 
@@ -49,13 +50,13 @@ const SidePanel = () => {
           <NavLink
             to="/admin/listBlogs"
             className={({ isActive }) =>
-              `nav-link d-flex align-items-center gap-3 py-3 px-4 ${
-                isActive ? "bg-light border-end border-4 border-primary fw-semibold" : "text-dark"
+              `nav-link d-flex flex-column flex-md-row align-items-center gap-md-3 py-2 py-md-3 px-2 px-md-4 ${
+                isActive ? "bg-light border-bottom border-md-bottom-0 border-end-md border-4 border-primary fw-semibold" : "text-dark"
               }`
             }
           >
             <img src={assets.blog_icon} alt="" width={22} height={22} />
-            <span>Blog Lists</span>
+            <span className="d-none d-md-inline">Blog Lists</span>
           </NavLink>
         </li>
 
@@ -64,13 +65,13 @@ const SidePanel = () => {
           <NavLink
             to="/admin/listComments"
             className={({ isActive }) =>
-              `nav-link d-flex align-items-center gap-3 py-3 px-4 ${
-                isActive ? "bg-light border-end border-4 border-primary fw-semibold" : "text-dark"
+              `nav-link d-flex flex-column flex-md-row align-items-center gap-md-3 py-2 py-md-3 px-2 px-md-4 ${
+                isActive ? "bg-light border-bottom border-md-bottom-0 border-end-md border-4 border-primary fw-semibold" : "text-dark"
               }`
             }
           >
             <img src={assets.comment_icon} alt="" width={22} height={22} />
-            <span>Comments</span>
+            <span className="d-none d-md-inline">Comments</span>
           </NavLink>
         </li>
 

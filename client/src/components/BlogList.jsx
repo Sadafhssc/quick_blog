@@ -8,14 +8,17 @@ const BlogList = () => {
   const {blogs}=useAppContext();
   return (
     <>
-      <header className="d-flex justify-content-center">
-        <ul className="nav gap-1.5">
+      <header className="d-flex justify-content-center px-3">
+        <ul
+          className="nav flex-wrap justify-content-center"
+          style={{ maxWidth: "700px", rowGap: "8px", columnGap: "6px" }}
+        >
 
           {blogCategories.map((category) => (
             <li className="nav-item" key={category}>
               <button
                 onClick={() => setMenu(category)}
-                className="btn rounded-pill px-4 py-2"
+                className="btn rounded-pill px-3 px-md-4 py-1 py-md-2"
                 style={{
                   backgroundColor:
                     menu === category ? "#5044E5" : "white",
@@ -23,6 +26,8 @@ const BlogList = () => {
                     menu === category ? "#FFFFFF" : "#374253",
                   border: "none",
                   fontWeight: "400",
+                  fontSize: "clamp(0.8rem, 2vw, 1rem)",
+                  whiteSpace: "nowrap",
                 }}
               >
                 {category}

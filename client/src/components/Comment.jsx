@@ -133,8 +133,11 @@ const Comment = () => {
         </div>
 
         <button
-          className="btn btn-primary"
+          className="btn"
           onClick={postComment}
+          style={{backgroundColor:"#5044E5",
+          color: "white"
+          }}
         >
           Submit
         </button>

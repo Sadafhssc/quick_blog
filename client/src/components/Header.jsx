@@ -49,7 +49,7 @@ const Header = () => {
     {/* Heading */}
     <h1
       className="fw-bold lh-1 mb-4"
-      style={{ fontSize: "3.7rem",color:" #374253" }}
+      style={{ fontSize: "clamp(2.2rem, 8vw, 3.7rem)", color: " #374253" }}
     >
       Your own{" "}
       <span style={{ color: "#5044E5" }}>
@@ -71,56 +71,58 @@ const Header = () => {
       and to write without filters. Whether it's one word or a
       thousand, your story starts right here.
     </p>
-{/* Search */}
-<div
-  className="d-flex align-items-stretch justify-content-center mx-auto"
-  style={{ maxWidth: "560px", gap: "10px" }}
->
-  <input
-    type="text"
-    value={searchValue}
-    onChange={(e)=>setSearchValue(e.target.value)}
-    className="form-control py-3 shadow-sm"
-    placeholder="Search for blogs"
-    style={{
-      borderRadius: "8px",
-      border: "1px solid #D8DEE8",
-    }}
-  />
 
-  {searchValue && (
-    <button
-      type="button"
-      onClick={handleClear}
-      className="btn shadow-sm"
-      style={{
-        border: "1.5px solid #5044E5",
-        background: "transparent",
-        color: "#5044E5",
-        fontSize: "0.95rem",
-        fontWeight: 500,
-        whiteSpace: "nowrap",
-        borderRadius: "8px",
-        padding: "0 24px",
-      }}
-      aria-label="Clear search"
+    {/* Search */}
+    <div
+      className="d-flex align-items-stretch justify-content-center mx-auto"
+      style={{ maxWidth: "560px", gap: "8px" }}
     >
-      Clear
-    </button>
-  )}
+      <input
+        type="text"
+        value={searchValue}
+        onChange={(e)=>setSearchValue(e.target.value)}
+        className="form-control py-2 py-md-3 shadow-sm"
+        placeholder="Search for blogs"
+        style={{
+          borderRadius: "8px",
+          border: "1px solid #D8DEE8",
+          fontSize: "clamp(0.85rem, 2.5vw, 1rem)",
+        }}
+      />
 
-  <button
-    className="btn px-5 text-white shadow-sm"
-    onClick={handleSubmit}
-    style={{
-      backgroundColor: "#5044E5",
-      borderRadius: "8px",
-      whiteSpace: "nowrap",
-    }}
-  >
-    Search
-  </button>
-</div>
+      {searchValue && (
+        <button
+          type="button"
+          onClick={handleClear}
+          className="btn shadow-sm px-2 px-sm-3 px-md-4"
+          style={{
+            border: "1.5px solid #5044E5",
+            background: "transparent",
+            color: "#5044E5",
+            fontSize: "clamp(0.75rem, 2.2vw, 0.95rem)",
+            fontWeight: 500,
+            whiteSpace: "nowrap",
+            borderRadius: "8px",
+          }}
+          aria-label="Clear search"
+        >
+          Clear
+        </button>
+      )}
+
+      <button
+        className="btn px-3 px-sm-4 px-md-5 text-white shadow-sm"
+        onClick={handleSubmit}
+        style={{
+          backgroundColor: "#5044E5",
+          borderRadius: "8px",
+          whiteSpace: "nowrap",
+          fontSize: "clamp(0.85rem, 2.5vw, 1rem)",
+        }}
+      >
+        Search
+      </button>
+    </div>
 
   </div>
 </section>

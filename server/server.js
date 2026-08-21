@@ -8,7 +8,10 @@ import blogRouter from "./routes/blogRoutes.js";
 const app=express();
 await connectDB();
 app.use(cors({
-  origin: "https://quick-blog-server-pied-psi.vercel.app",
+  origin: [
+    "https://quick-blog-server-pied-psi.vercel.app",
+    "http://localhost:5173"
+  ],
   credentials: true
 }));
 app.use(express.json());

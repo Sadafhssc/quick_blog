@@ -8,7 +8,7 @@ const Layout = () => {
     <>
       <AdminHeader />
 
-      <div className="d-flex">
+      <div className="d-flex flex-column flex-md-row">
         <SidePanel />
 
         <div className="flex-grow-1">

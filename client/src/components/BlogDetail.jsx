@@ -49,10 +49,10 @@ useEffect(()=>{
           Published on May 28th 2025
         </p>
     
-        {/* Heading */}
+                {/* Heading */}
         <h1
           className="fw-bold lh-1 mb-4"
-          style={{ fontSize: "3rem",color:" #374253" }}
+          style={{ fontSize: "clamp(1.8rem, 6vw, 3rem)", color: " #374253" }}
         >
         {blog.title}
         </h1>

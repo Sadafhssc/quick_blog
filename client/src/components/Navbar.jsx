@@ -6,7 +6,7 @@ import { useAppContext } from '../context/AppContext';
 const Navbar = () => {
   const {navigate,token}=useAppContext();
   return (
-    <header className=" py-4"  style={{
+    <header className="py-3 py-md-4" style={{
     background:
       "radial-gradient(circle at 30% 35%, rgba(255,220,230,.45), transparent 35%), radial-gradient(circle at 70% 30%, rgba(195,230,255,.45), transparent 35%)",
   }}>
@@ -18,11 +18,12 @@ const Navbar = () => {
             src={assets.logo}
             alt="logo"
             className="logo"
+            style={{ maxWidth: "120px", height: "auto" }}
             onClick={()=>navigate("/")}
           />
           <button
-            className="btn rounded-pill px-5 py-2 d-flex align-items-center text-white"
-            style={{ backgroundColor: "#5044E5", borderColor: "#5044E5" }}
+            className="btn rounded-pill px-3 px-sm-4 px-md-5 py-1 py-md-2 d-flex align-items-center text-white"
+            style={{ backgroundColor: "#5044E5", borderColor: "#5044E5", fontSize: "clamp(0.8rem, 2vw, 1rem)" }}
              onClick={()=>navigate("/login")}
           >
             <span className="me-2">{token?"Dashboard":"Login"}</span>

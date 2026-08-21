@@ -65,30 +65,32 @@ const AddCommentList = () => {
   return (
     <>
     <div className="container-fluid py-4 px-4 bg-light min-vh-80">
-      {/* Heading & Filter Buttons */}
-      <div className="d-flex justify-content-between align-items-center mb-4">
+            {/* Heading & Filter Buttons */}
+      <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3 mb-4">
         <h5 className="fw-semibold m-0">Comments</h5>
 
-       <div className="d-flex gap-3">
+       <div className="d-flex gap-2 gap-sm-3">
 
   <button
     onClick={() => setFilter("approved")}
-    className={`btn rounded-pill px-3 ${
+    className={`btn rounded-pill px-2 px-sm-3 ${
       filter === "approved"
         ? "btn-outline-primary"
         : "btn-outline-secondary"
     }`}
+    style={{ fontSize: "clamp(0.75rem, 2.5vw, 1rem)", whiteSpace: "nowrap" }}
   >
     Approved
   </button>
 
   <button
     onClick={() => setFilter("unapproved")}
-    className={`btn rounded-pill px-3 ${
+    className={`btn rounded-pill px-2 px-sm-3 ${
       filter === "unapproved"
         ? "btn-outline-primary"
         : "btn-outline-secondary"
     }`}
+    style={{ fontSize: "clamp(0.75rem, 2.5vw, 1rem)", whiteSpace: "nowrap" }}
   >
     Not Approved
   </button>
