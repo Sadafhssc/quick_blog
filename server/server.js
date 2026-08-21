@@ -9,7 +9,7 @@ const app=express();
 await connectDB();
 app.use(cors({
   origin: [
-    "https://quick-blog-server-pied-psi.vercel.app",
+    "https://quick-blog-vert-one.vercel.app",
     "http://localhost:5173"
   ],
   credentials: true
