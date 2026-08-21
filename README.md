@@ -6,7 +6,8 @@ QuickBlog is designed to provide a complete content-management experience where 
 
 ## Live Demo
 
-A live project demonstration is available on LinkedIn:
+**Deployed App:**
+https://quick-blog-vert-one.vercel.app/
 
 **LinkedIn Demo:**
 https://www.linkedin.com/feed/update/urn:li:activity:7486760408440029186/
@@ -15,6 +16,32 @@ https://www.linkedin.com/feed/update/urn:li:activity:7486760408440029186/
 
 **GitHub:**
 https://github.com/Sadafhssc/quick_blog
+
+---
+
+## Screenshots
+
+### Homepage
+<img width="1920" height="1080" alt="Screenshot (2229)" src="https://github.com/user-attachments/assets/8e4b96ea-6867-4e23-afa9-cbdaaf6dc0ff" />
+<img width="1920" height="1080" alt="Screenshot (2228)" src="https://github.com/user-attachments/assets/753d9b33-11d5-489e-b347-198de9033f5d" />
+<img width="1920" height="1080" alt="Screenshot (1904)" src="https://github.com/user-attachments/assets/d233e06c-c962-4a9a-b0a9-e34b3947081c" />
+
+
+### Blog Detail Page with Comment Section
+<img width="1920" height="1080" alt="Screenshot (2231)" src="https://github.com/user-attachments/assets/8e0e8fe9-166d-437f-8d5c-e310b9e57963" />
+<img width="1920" height="1080" alt="Screenshot (2230)" src="https://github.com/user-attachments/assets/7c791a7d-d481-491f-85e7-53b28bec3d92" />
+
+
+### Login Page
+<img width="1920" height="1080" alt="Screenshot (2237)" src="https://github.com/user-attachments/assets/94242e14-9ecc-498d-912b-dc1aba5a7140" />
+
+
+### Admin Dashboard
+<img width="1920" height="1080" alt="Screenshot (2236)" src="https://github.com/user-attachments/assets/623bf4f3-2ee8-4cc8-bb24-6c0eb4b670ed" />
+<img width="1920" height="1080" alt="Screenshot (2235)" src="https://github.com/user-attachments/assets/36057f67-44c8-4b22-abcb-8b1a5dc40611" />
+<img width="1920" height="1080" alt="Screenshot (2234)" src="https://github.com/user-attachments/assets/f232500f-4dc3-4a92-81ee-0f552c286b27" />
+<img width="1920" height="1080" alt="Screenshot (2233)" src="https://github.com/user-attachments/assets/e60ece82-af7a-44ab-9127-c47b65b8d1a9" />
+
 
 ---
 
@@ -141,7 +168,7 @@ Base route:
 ```
 
 | Method | Endpoint           | Description                | Authentication |
-| ------ | ------------------ | -------------------------- | -------------- |
+| ------ | ------------------ | --------------------------- | -------------- |
 | POST   | `/login`           | Authenticate administrator | Public         |
 | GET    | `/blogs`           | Get all blogs              | Admin          |
 | GET    | `/comments`        | Get all comments           | Admin          |
@@ -175,7 +202,7 @@ GEMINI_API_KEY=your_gemini_api_key
 ### Environment Variable Description
 
 | Variable                | Purpose                            |
-| ----------------------- | ---------------------------------- |
+| ----------------------- | ----------------------------------- |
 | `PORT`                  | Port used by the Express server    |
 | `JWT_SECRET`            | Secret used for JWT authentication |
 | `ADMIN_EMAIL`           | Administrator login email          |
@@ -470,4 +497,3 @@ GitHub: https://github.com/Sadafhssc
 LinkedIn: https://linkedin.com/in/sadaf-javed
 
 Project Repository: https://github.com/Sadafhssc/quick_blog
-
