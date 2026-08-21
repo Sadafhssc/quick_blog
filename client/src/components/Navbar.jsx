@@ -14,13 +14,13 @@ const Navbar = () => {
 
         <div className="d-flex justify-content-between align-items-center cursor-pointer">
 
-          <img
-            src={assets.logo}
-            alt="logo"
-            className="logo"
-            style={{ maxWidth: "120px", height: "auto" }}
-            onClick={()=>navigate("/")}
-          />
+  <img
+  src={assets.logo}
+  alt="logo"
+  className="logo"
+  style={{ cursor: "pointer", width: "clamp(100px, 12vw, 180px)", height: "auto" }}
+  onClick={() => navigate("/")}
+/>
           <button
             className="btn rounded-pill px-3 px-sm-4 px-md-5 py-1 py-md-2 d-flex align-items-center text-white"
             style={{ backgroundColor: "#5044E5", borderColor: "#5044E5", fontSize: "clamp(0.8rem, 2vw, 1rem)" }}

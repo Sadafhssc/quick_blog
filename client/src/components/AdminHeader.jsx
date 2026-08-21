@@ -11,13 +11,13 @@ const AdminHeader = () => {
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
 
-            <img
-              src={assets.logo}
-              alt="logo"
-              className="logo"
-              style={{ cursor: "pointer", maxWidth: "120px", height: "auto" }}
-              onClick={() => navigate("/")}
-            />
+        <img
+  src={assets.logo}
+  alt="logo"
+  className="logo"
+  style={{ cursor: "pointer", width: "clamp(100px, 12vw, 180px)", height: "auto" }}
+  onClick={() => navigate("/")}
+/>
 
             <button
               className="btn rounded-pill px-4 px-sm-4 px-md-5 py-2 d-flex align-items-center text-white"
